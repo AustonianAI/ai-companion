@@ -7,6 +7,9 @@ import { Menu, Sparkles } from "lucide-react"
 
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
+import { ModeToggle } from "@/components/mode-toggle"
+
+import MobileSidebar from "./mobile-sidebar"
 
 const font = Poppins({
   weight: "600",
@@ -15,9 +18,9 @@ const font = Poppins({
 
 const Navbar = () => {
   return (
-    <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary">
+    <div className="fixed w-full z-50 flex justify-between items-center py-2 px-4 border-b border-primary/10 bg-secondary h-16">
       <div className="flex items-center">
-        <Menu className="md:hidden block" />
+        <MobileSidebar />
         <Link href="/">
           <h1
             className={cn(
@@ -34,6 +37,7 @@ const Navbar = () => {
           Upgrade
           <Sparkles className="h-4 w-4 fill-white text-white ml-2" />
         </Button>
+        <ModeToggle />
         <UserButton />
       </div>
     </div>
